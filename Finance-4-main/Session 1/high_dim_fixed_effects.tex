@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\begin{document}
+\section*{High-Dimensional Fixed Effects Results}
+\begin{table}[htbp]
+   \caption{High-Dimensional Fixed Effects Results}
+   \centering
+   \begin{tabular}{lccc}
+      \tabularnewline \midrule \midrule
+      Dependent Variables: & Euros                & log(Euros)     & Euros\\  
+      Model:               & (1)                  & (2)            & (3)\\  
+                           &  Poisson             & OLS            & Neg. Bin.\\  
+      \midrule
+      \emph{Variables}\\
+      log(dist\_km)        & -1.528$^{***}$       & -2.170$^{***}$ & -1.711$^{***}$\\   
+                           & (0.1307)             & (0.1714)       & (0.1773)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      Origin               & Yes                  & Yes            & Yes\\  
+      Destination          & Yes                  & Yes            & Yes\\  
+      Product              & Yes                  & Yes            & Yes\\  
+      Year                 & Yes                  & Yes            & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations         & 38,325               & 38,325         & 38,325\\  
+      Squared Correlation  & 0.61202              & 0.70558        & 0.43760\\  
+      Pseudo R$^2$         & 0.76403              & 0.23640        & 0.03473\\  
+      BIC                  & $1.4\times 10^{12}$  & 151,977.2      & 1,293,786.1\\  
+      Over-dispersion      &                      &                & 0.54877\\  
+      \midrule \midrule
+      \multicolumn{4}{l}{\emph{Clustered (Origin \& Destination) standard-errors in parentheses}}\\
+      \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+   \end{tabular}
+\end{table}
+\end{document}

@@ -1,0 +1,87 @@
+
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage[table]{xcolor} % Added this line for cell coloring
+\geometry{a4paper, margin=1in}
+\begin{document}
+
+\section*{General Descriptive Statistics}
+\begin{table}[!h]
+\centering
+\begin{tabular}{lrrrrr}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{5}{c}{General Descriptive Statistics} \\
+\cmidrule(l{3pt}r{3pt}){2-6}
+Variable & Mean & SD & Median & Min & Max\\
+\midrule
+\cellcolor{gray!10}{mpg} & \cellcolor{gray!10}{20.090625} & \cellcolor{gray!10}{6.0269481} & \cellcolor{gray!10}{19.200} & \cellcolor{gray!10}{10.400} & \cellcolor{gray!10}{33.900}\\
+cyl & 6.187500 & 1.7859216 & 6.000 & 4.000 & 8.000\\
+\cellcolor{gray!10}{disp} & \cellcolor{gray!10}{230.721875} & \cellcolor{gray!10}{123.9386938} & \cellcolor{gray!10}{196.300} & \cellcolor{gray!10}{71.100} & \cellcolor{gray!10}{472.000}\\
+hp & 146.687500 & 68.5628685 & 123.000 & 52.000 & 335.000\\
+\cellcolor{gray!10}{drat} & \cellcolor{gray!10}{3.596563} & \cellcolor{gray!10}{0.5346787} & \cellcolor{gray!10}{3.695} & \cellcolor{gray!10}{2.760} & \cellcolor{gray!10}{4.930}\\
+\addlinespace
+wt & 3.217250 & 0.9784574 & 3.325 & 1.513 & 5.424\\
+\cellcolor{gray!10}{qsec} & \cellcolor{gray!10}{17.848750} & \cellcolor{gray!10}{1.7869432} & \cellcolor{gray!10}{17.710} & \cellcolor{gray!10}{14.500} & \cellcolor{gray!10}{22.900}\\
+vs & 0.437500 & 0.5040161 & 0.000 & 0.000 & 1.000\\
+\cellcolor{gray!10}{am} & \cellcolor{gray!10}{0.406250} & \cellcolor{gray!10}{0.4989909} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{1.000}\\
+gear & 3.687500 & 0.7378041 & 4.000 & 3.000 & 5.000\\
+\addlinespace
+\cellcolor{gray!10}{carb} & \cellcolor{gray!10}{2.812500} & \cellcolor{gray!10}{1.6152000} & \cellcolor{gray!10}{2.000} & \cellcolor{gray!10}{1.000} & \cellcolor{gray!10}{8.000}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\newpage
+
+\section*{Group Statistics by Cylinders}
+\begin{table}[!h]
+\centering
+\begin{tabular}{rlrrrrr}
+\toprule
+\multicolumn{2}{c}{ } & \multicolumn{5}{c}{Group Statistics by Cylinders} \\
+\cmidrule(l{3pt}r{3pt}){3-7}
+cyl & Variable & Mean & SD & Median & Min & Max\\
+\midrule
+\cellcolor{gray!10}{4} & \cellcolor{gray!10}{am} & \cellcolor{gray!10}{0.7272727} & \cellcolor{gray!10}{0.4670994} & \cellcolor{gray!10}{1.000} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{1.000}\\
+4 & carb & 1.5454545 & 0.5222330 & 2.000 & 1.000 & 2.000\\
+\cellcolor{gray!10}{4} & \cellcolor{gray!10}{disp} & \cellcolor{gray!10}{105.1363636} & \cellcolor{gray!10}{26.8715937} & \cellcolor{gray!10}{108.000} & \cellcolor{gray!10}{71.100} & \cellcolor{gray!10}{146.700}\\
+4 & drat & 4.0709091 & 0.3654711 & 4.080 & 3.690 & 4.930\\
+\cellcolor{gray!10}{4} & \cellcolor{gray!10}{gear} & \cellcolor{gray!10}{4.0909091} & \cellcolor{gray!10}{0.5393599} & \cellcolor{gray!10}{4.000} & \cellcolor{gray!10}{3.000} & \cellcolor{gray!10}{5.000}\\
+\addlinespace
+4 & hp & 82.6363636 & 20.9345300 & 91.000 & 52.000 & 113.000\\
+\cellcolor{gray!10}{4} & \cellcolor{gray!10}{mpg} & \cellcolor{gray!10}{26.6636364} & \cellcolor{gray!10}{4.5098277} & \cellcolor{gray!10}{26.000} & \cellcolor{gray!10}{21.400} & \cellcolor{gray!10}{33.900}\\
+4 & qsec & 19.1372727 & 1.6824452 & 18.900 & 16.700 & 22.900\\
+\cellcolor{gray!10}{4} & \cellcolor{gray!10}{vs} & \cellcolor{gray!10}{0.9090909} & \cellcolor{gray!10}{0.3015113} & \cellcolor{gray!10}{1.000} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{1.000}\\
+4 & wt & 2.2857273 & 0.5695637 & 2.200 & 1.513 & 3.190\\
+\addlinespace
+\cellcolor{gray!10}{6} & \cellcolor{gray!10}{am} & \cellcolor{gray!10}{0.4285714} & \cellcolor{gray!10}{0.5345225} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{1.000}\\
+6 & carb & 3.4285714 & 1.8126539 & 4.000 & 1.000 & 6.000\\
+\cellcolor{gray!10}{6} & \cellcolor{gray!10}{disp} & \cellcolor{gray!10}{183.3142857} & \cellcolor{gray!10}{41.5624602} & \cellcolor{gray!10}{167.600} & \cellcolor{gray!10}{145.000} & \cellcolor{gray!10}{258.000}\\
+6 & drat & 3.5857143 & 0.4760552 & 3.900 & 2.760 & 3.920\\
+\cellcolor{gray!10}{6} & \cellcolor{gray!10}{gear} & \cellcolor{gray!10}{3.8571429} & \cellcolor{gray!10}{0.6900656} & \cellcolor{gray!10}{4.000} & \cellcolor{gray!10}{3.000} & \cellcolor{gray!10}{5.000}\\
+\addlinespace
+6 & hp & 122.2857143 & 24.2604911 & 110.000 & 105.000 & 175.000\\
+\cellcolor{gray!10}{6} & \cellcolor{gray!10}{mpg} & \cellcolor{gray!10}{19.7428571} & \cellcolor{gray!10}{1.4535670} & \cellcolor{gray!10}{19.700} & \cellcolor{gray!10}{17.800} & \cellcolor{gray!10}{21.400}\\
+6 & qsec & 17.9771429 & 1.7068657 & 18.300 & 15.500 & 20.220\\
+\cellcolor{gray!10}{6} & \cellcolor{gray!10}{vs} & \cellcolor{gray!10}{0.5714286} & \cellcolor{gray!10}{0.5345225} & \cellcolor{gray!10}{1.000} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{1.000}\\
+6 & wt & 3.1171429 & 0.3563455 & 3.215 & 2.620 & 3.460\\
+\addlinespace
+\cellcolor{gray!10}{8} & \cellcolor{gray!10}{am} & \cellcolor{gray!10}{0.1428571} & \cellcolor{gray!10}{0.3631365} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{1.000}\\
+8 & carb & 3.5000000 & 1.5566236 & 3.500 & 2.000 & 8.000\\
+\cellcolor{gray!10}{8} & \cellcolor{gray!10}{disp} & \cellcolor{gray!10}{353.1000000} & \cellcolor{gray!10}{67.7713236} & \cellcolor{gray!10}{350.500} & \cellcolor{gray!10}{275.800} & \cellcolor{gray!10}{472.000}\\
+8 & drat & 3.2292857 & 0.3723618 & 3.115 & 2.760 & 4.220\\
+\cellcolor{gray!10}{8} & \cellcolor{gray!10}{gear} & \cellcolor{gray!10}{3.2857143} & \cellcolor{gray!10}{0.7262730} & \cellcolor{gray!10}{3.000} & \cellcolor{gray!10}{3.000} & \cellcolor{gray!10}{5.000}\\
+\addlinespace
+8 & hp & 209.2142857 & 50.9768855 & 192.500 & 150.000 & 335.000\\
+\cellcolor{gray!10}{8} & \cellcolor{gray!10}{mpg} & \cellcolor{gray!10}{15.1000000} & \cellcolor{gray!10}{2.5600481} & \cellcolor{gray!10}{15.200} & \cellcolor{gray!10}{10.400} & \cellcolor{gray!10}{19.200}\\
+8 & qsec & 16.7721429 & 1.1960138 & 17.175 & 14.500 & 18.000\\
+\cellcolor{gray!10}{8} & \cellcolor{gray!10}{vs} & \cellcolor{gray!10}{0.0000000} & \cellcolor{gray!10}{0.0000000} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{0.000} & \cellcolor{gray!10}{0.000}\\
+8 & wt & 3.9992143 & 0.7594047 & 3.755 & 3.170 & 5.424\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
+

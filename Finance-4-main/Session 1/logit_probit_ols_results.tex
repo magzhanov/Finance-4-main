@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\begin{document}
+\section*{Logit, Probit, and OLS Model Results}
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Sun, Jan 12, 2025 - 6:13:30 PM
+% Requires LaTeX packages: dcolumn 
+\begin{table}[!htbp] \centering 
+  \caption{Regression Results: Logit, Probit, and OLS Models} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{Binary Outcome (Y)} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{\textit{logistic}} & \multicolumn{1}{c}{\textit{probit}} & \multicolumn{1}{c}{\textit{OLS}} \\ 
+ & \multicolumn{1}{c}{Logit} & \multicolumn{1}{c}{Probit} & \multicolumn{1}{c}{OLS} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\ 
+\hline \\[-1.8ex] 
+ X1 & 1.090^{***} & 0.550^{***} & 0.037^{***} \\ 
+  & (0.190) & (0.096) & (0.006) \\ 
+  & & & \\ 
+ X2 & -0.685^{***} & -0.351^{***} & -0.023^{***} \\ 
+  & (0.098) & (0.050) & (0.003) \\ 
+  & & & \\ 
+ X3 & 0.664^{***} & 0.337^{***} & 0.020^{***} \\ 
+  & (0.132) & (0.067) & (0.004) \\ 
+  & & & \\ 
+ Constant & 1.050^{**} & 0.446 & 0.224^{***} \\ 
+  & (0.513) & (0.277) & (0.022) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & \multicolumn{1}{c}{1,000} & \multicolumn{1}{c}{1,000} & \multicolumn{1}{c}{1,000} \\ 
+R$^{2}$ &  &  & \multicolumn{1}{c}{0.094} \\ 
+Adjusted R$^{2}$ &  &  & \multicolumn{1}{c}{0.091} \\ 
+Log Likelihood & \multicolumn{1}{c}{-130.563} & \multicolumn{1}{c}{-129.617} &  \\ 
+Akaike Inf. Crit. & \multicolumn{1}{c}{269.125} & \multicolumn{1}{c}{267.234} &  \\ 
+Residual Std. Error &  &  & \multicolumn{1}{c}{0.198 (df = 996)} \\ 
+F Statistic &  &  & \multicolumn{1}{c}{34.403$^{***}$ (df = 3; 996)} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+\end{document}

@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\usepackage{booktabs}
+
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\section*{OLS Models with Expanding Fixed Effects}
+
+\begingroup
+\centering
+\begin{tabular}{lcccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{4}{c}{log(Euros)}\\
+   Model:         & (1)            & (2)            & (3)            & (4)\\  
+   \midrule
+   \emph{Variables}\\
+   log(dist\_km)  & -1.672$^{***}$ & -2.072$^{***}$ & -2.169$^{***}$ & -2.170$^{***}$\\   
+                  & (0.4560)       & (0.1562)       & (0.1713)       & (0.1714)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   Origin         & Yes            & Yes            & Yes            & Yes\\  
+   Destination    &                & Yes            & Yes            & Yes\\  
+   Product        &                &                & Yes            & Yes\\  
+   Year           &                &                &                & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations   & 38,325         & 38,325         & 38,325         & 38,325\\  
+   R$^2$          & 0.34591        & 0.50428        & 0.70402        & 0.70558\\  
+   Within R$^2$   & 0.10957        & 0.13218        & 0.21827        & 0.21932\\  
+   \midrule \midrule
+   \multicolumn{5}{l}{\emph{Clustered (Origin \& Destination) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+\end{document}
