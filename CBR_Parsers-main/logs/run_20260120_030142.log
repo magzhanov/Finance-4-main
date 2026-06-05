@@ -1,0 +1,51 @@
+2026-01-20 03:01:42,042 | INFO | logfile: logs/run_20260120_030142.log
+2026-01-20 03:01:42,042 | INFO | WINDOW: 2026-01-13 .. 2026-01-20
+2026-01-20 03:01:42,042 | INFO | RUN: boe
+2026-01-20 03:01:44,581 | INFO | [boe] new: 3 | time: 2.54s
+2026-01-20 03:01:44,581 | INFO | RUN: nbs
+2026-01-20 03:01:45,538 | INFO | [nbs] new: 0 | time: 0.96s
+2026-01-20 03:01:45,538 | INFO | RUN: mnb
+2026-01-20 03:03:01,039 | INFO | [mnb] new: 0 | time: 75.50s
+2026-01-20 03:03:01,040 | INFO | RUN: oenb
+2026-01-20 03:03:08,130 | INFO | [oenb] new: 2 | time: 7.09s
+2026-01-20 03:03:08,130 | INFO | RUN: acpr
+2026-01-20 03:03:23,896 | INFO | [acpr] new: 0 | time: 15.77s
+2026-01-20 03:03:23,897 | INFO | RUN: nbkz
+2026-01-20 03:03:28,975 | INFO | [nbkz] new: 0 | time: 5.08s
+2026-01-20 03:03:28,976 | INFO | RUN: bnm
+2026-01-20 03:04:31,479 | ERROR | /Users/annaivanova/Parsers/parsers/bnm_moldova.py:137: XMLParsedAsHTMLWarning: It looks like you're using an HTML parser to parse an XML document.
+2026-01-20 03:04:31,479 | ERROR | Assuming this really is an XML document, what you're doing might work, but you should know that using an XML parser will be more reliable. To parse this document as XML, make sure you have the Python package 'lxml' installed, and pass the keyword argument `features="xml"` into the BeautifulSoup constructor.
+2026-01-20 03:04:31,479 | ERROR | If you want or need to use an HTML parser on this document, you can make this warning go away by filtering it. To do that, run this code before calling the BeautifulSoup constructor:
+2026-01-20 03:04:31,480 | ERROR |     from bs4 import XMLParsedAsHTMLWarning
+2026-01-20 03:04:31,480 | ERROR |     import warnings
+2026-01-20 03:04:31,480 | ERROR |     warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
+2026-01-20 03:04:31,480 | ERROR |   soup = BeautifulSoup(html, "html.parser")
+2026-01-20 03:04:33,198 | INFO | [bnm] new: 0 | time: 64.22s
+2026-01-20 03:04:33,198 | INFO | RUN: tcmb
+2026-01-20 03:04:44,682 | INFO | [tcmb] new: 0 | time: 11.48s
+2026-01-20 03:04:44,683 | INFO | RUN: bde
+2026-01-20 03:04:52,809 | INFO | [bde] new: 4 | time: 8.13s
+2026-01-20 03:04:52,809 | INFO | RUN: boc
+2026-01-20 03:04:54,631 | INFO | [boc] new: 2 | time: 1.82s
+2026-01-20 03:04:54,632 | INFO | RUN: cba_armenia
+2026-01-20 03:04:57,098 | INFO | [cba_armenia] new: 0 | time: 2.47s
+2026-01-20 03:04:57,098 | INFO | RUN: cbsl
+2026-01-20 03:05:00,244 | INFO | [cbsl] new: 0 | time: 3.15s
+2026-01-20 03:05:00,244 | INFO | RUN: esrb
+2026-01-20 03:05:00,812 | INFO | [esrb] fetch failed: https://www.esrb.europa.eu/news/pr/date/2026/html/index.en.html :: 404 Client Error: Not Found for url: https://www.esrb.europa.eu/news/pr/date/2026/html/index.en.html
+2026-01-20 03:05:00,812 | INFO | [esrb] new: 0 | time: 0.57s
+2026-01-20 03:05:00,812 | INFO | RUN: cfpb
+2026-01-20 03:05:14,640 | INFO | [cfpb] new: 0 | time: 13.83s
+2026-01-20 03:05:14,640 | INFO | RUN: icma
+2026-01-20 03:05:24,723 | INFO | [icma] new: 0 | time: 10.08s
+2026-01-20 03:05:24,724 | INFO | RUN: occ
+2026-01-20 03:05:28,754 | INFO | [occ] new: 2 | time: 4.03s
+2026-01-20 03:05:28,754 | INFO | RUN: oenb
+2026-01-20 03:05:33,313 | INFO | [oenb] new: 2 | time: 4.56s
+2026-01-20 03:05:33,313 | INFO | RUN: fsc_korea
+2026-01-20 03:05:55,160 | INFO | [fsc_korea] new: 4 | time: 21.85s
+2026-01-20 03:05:55,160 | INFO | RUN: ngfs
+2026-01-20 03:06:15,994 | INFO | [ngfs] new: 0 | time: 20.83s
+2026-01-20 03:06:15,995 | INFO | RUN: fed
+2026-01-20 03:07:15,962 | INFO | [fed] new: 0 | time: 59.97s
+2026-01-20 03:07:15,963 | INFO | TOTAL new records saved: 19 | total time: 333.92s
