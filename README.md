@@ -1,12 +1,12 @@
 # Finance / Macroeconomics Workspace
 
-Этот репозиторий объединяет три независимых учебно-исследовательских проекта:
+This repository combines three independent educational and research-oriented projects:
 
-- `CBR_Parsers-main` - Python-парсеры публикаций центральных банков и финансовых регуляторов.
-- `DSGE` - MATLAB/Dynare-скрипты для моделей New Keynesian, DSGE, IRF, BK-test и оптимальной политики.
-- `Finance-4-main` - материалы TA sessions по Finance 4 на R: регрессии, fixed effects, event study, DiD и IV.
+- `CBR_Parsers-main` - Python parsers for publications from central banks and financial regulators.
+- `DSGE` - MATLAB/Dynare scripts for New Keynesian, DSGE, IRF, Blanchard-Kahn, and optimal policy analysis.
+- `Finance-4-main` - Finance 4 TA session materials in R, covering regressions, fixed effects, event studies, Difference-in-Differences, and instrumental variables.
 
-## Структура проекта
+## Project Structure
 
 ```text
 .
@@ -15,26 +15,26 @@
 └── Finance-4-main/
 ```
 
-Каждая папка запускается отдельно и имеет собственные зависимости.
+Each folder is a separate project with its own dependencies and workflow.
 
 ## 1. `CBR_Parsers-main`
 
-Папка содержит Python-проект для регулярного сбора пресс-релизов, новостей и публикаций с сайтов центральных банков, финансовых регуляторов и международных организаций.
+This folder contains a Python project for collecting press releases, news, and publications from central banks, financial regulators, and international financial organizations.
 
-### Основные файлы
+### Main Files
 
-- `master.py` - ручной запуск выбранных парсеров за заданное окно времени.
-- `scheduler.py` - запуск всех подключенных парсеров один раз или по расписанию.
-- `requirements.txt` - зависимости Python.
-- `parsers/` - отдельные парсеры по источникам.
-- `storage/local.py` - локальное сохранение результатов.
-- `logs/` - логи запусков.
+- `master.py` - manual runner for selected parsers over a defined time window.
+- `scheduler.py` - one-time or scheduled runner for all configured parsers.
+- `requirements.txt` - Python dependencies.
+- `parsers/` - source-specific parser modules.
+- `storage/local.py` - local storage logic.
+- `logs/` - run logs.
 
-### Источники данных
+### Data Sources
 
-В проекте есть парсеры для Bank of England, National Bank of Serbia, Magyar Nemzeti Bank, OeNB, ACPR, National Bank of Kazakhstan, Bank of Canada, Central Bank of Armenia, ESRB, CFPB, OCC, FSC Korea, NGFS, Federal Reserve, U.S. Treasury и других источников.
+The project includes parsers for sources such as the Bank of England, National Bank of Serbia, Magyar Nemzeti Bank, OeNB, ACPR, National Bank of Kazakhstan, Bank of Canada, Central Bank of Armenia, ESRB, CFPB, OCC, FSC Korea, NGFS, Federal Reserve, U.S. Treasury, and others.
 
-### Установка
+### Installation
 
 ```bash
 cd CBR_Parsers-main
@@ -43,7 +43,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Для Windows PowerShell:
+For Windows PowerShell:
 
 ```powershell
 cd CBR_Parsers-main
@@ -52,72 +52,72 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### Запуск
+### Usage
 
-Разовый запуск за последние 7 дней:
+Run once for the last 7 days:
 
 ```bash
 python scheduler.py --once --days 7
 ```
 
-Регулярный запуск по понедельникам в 09:00:
+Run every Monday at 09:00:
 
 ```bash
 python scheduler.py --weekday 0 --hour 9 --minute 0 --days 7
 ```
 
-Ручной запуск через `master.py`:
+Manual run through `master.py`:
 
 ```bash
 python master.py
 ```
 
-Перед ручным запуском можно отредактировать список `PARSERS` в `master.py`: раскомментировать нужные парсеры и изменить окно сбора данных.
+Before using `master.py`, edit the `PARSERS` list if needed: uncomment the required parsers and adjust the collection window.
 
-### Результаты
+### Output
 
-Результаты сохраняются локально в папку `data/`:
+Collected results are saved locally in the `data/` folder:
 
-- JSON-записи документов;
-- PDF-файлы, если они доступны у источника;
-- локальная база/служебные файлы хранения.
+- JSON document records;
+- PDF files when available from the source;
+- local database and storage-related files.
 
 ## 2. `DSGE`
 
-Папка содержит MATLAB- и Dynare-материалы для анализа New Keynesian / DSGE-моделей.
+This folder contains MATLAB and Dynare materials for New Keynesian / DSGE model analysis.
 
-### Основные файлы
+### Main Files
 
-- `nk_tfp_3shocks.mod` - Dynare-модель New Keynesian под rational expectations с тремя шоками: TFP, cost-push и monetary policy.
-- `nk_tfp_3shocks_DE.mod` - версия модели с diagnostic expectations.
-- `simple_RE.m` - аналитическое решение RE-модели и сравнение IRF с Dynare.
-- `simple_IRFs.m` - построение IRF и forecast trajectories для RE/DE-моделей.
-- `BK_test.m` - проверка условий Blanchard-Kahn вручную и через Dynare.
-- `optimal_policy.m` - аналитическое сравнение Ramsey commitment и optimal discretion для cost-push shock.
+- `nk_tfp_3shocks.mod` - Dynare New Keynesian model under rational expectations with three shocks: TFP, cost-push, and monetary policy.
+- `nk_tfp_3shocks_DE.mod` - model version with diagnostic expectations.
+- `simple_RE.m` - analytical solution of the RE model and comparison of IRFs with Dynare.
+- `simple_IRFs.m` - IRF and forecast trajectory generation for RE/DE models.
+- `BK_test.m` - manual and Dynare-based Blanchard-Kahn condition checks.
+- `optimal_policy.m` - analytical comparison of Ramsey commitment and optimal discretion under a cost-push shock.
 
-### Требования
+### Requirements
 
 - MATLAB.
 - Dynare.
 
-В `.m`-файлах путь к Dynare задан явно, например:
+The `.m` files contain an explicit Dynare path, for example:
 
 ```matlab
 dynarePath = 'C:\dynare\4.5.7\matlab';
 addpath(dynarePath);
 ```
 
-Перед запуском на другом компьютере нужно заменить путь на локальный путь к установленному Dynare.
+Before running the scripts on another machine, replace this path with the local path to the installed Dynare version.
 
-### Запуск
+### Usage
 
-Открыть MATLAB, перейти в папку:
+Open MATLAB and move to the folder:
 
 ```matlab
 cd DSGE
 ```
 
-Запустить нужный скрипт:
+Run the desired script:
 
 ```matlab
 simple_RE
@@ -126,37 +126,37 @@ BK_test
 optimal_policy
 ```
 
-Dynare-модель можно запустить напрямую:
+Dynare model files can also be run directly:
 
 ```matlab
 dynare nk_tfp_3shocks.mod
 dynare nk_tfp_3shocks_DE.mod
 ```
 
-### Выходные результаты
+### Output
 
-Скрипты строят графики IRF, сравнивают аналитические и Dynare-решения, печатают диагностические показатели и проверяют условия детерминированности. `simple_IRFs.m` дополнительно сохраняет PNG-графики в папку `DSGE/images/`.
+The scripts generate IRF figures, compare analytical and Dynare solutions, print diagnostic metrics, and check determinacy conditions. `simple_IRFs.m` also saves PNG figures to `DSGE/images/`.
 
 ## 3. `Finance-4-main`
 
-Папка содержит R-проект с материалами TA sessions по курсу Finance 4.
+This folder contains an R project with TA session materials for the Finance 4 course.
 
-### Структура
+### Structure
 
-- `Finance-4.Rproj` - RStudio project.
-- `Session 1/` - описательная статистика, LaTeX/PDF-таблицы, OLS, fixed effects, logit/probit, marginal effects.
-- `Session 2-3/` - event study на IBES/CRSP, WRDS-подключение, обработка доходностей вокруг событий.
-- `Session 4-5/` - staggered Difference-in-Differences, TWFE, Goodman-Bacon decomposition, did/did2s.
-- `Session 6/` - instrumental variables: weak instruments, first stage, LATE/ATE distortion.
+- `Finance-4.Rproj` - RStudio project file.
+- `Session 1/` - descriptive statistics, LaTeX/PDF tables, OLS, fixed effects, logit/probit, and marginal effects.
+- `Session 2-3/` - event study using IBES/CRSP, WRDS connection, and stock return processing around event dates.
+- `Session 4-5/` - staggered Difference-in-Differences, TWFE, Goodman-Bacon decomposition, `did`, and `did2s`.
+- `Session 6/` - instrumental variables, weak instruments, first stage diagnostics, and LATE/ATE distortion.
 
-### Требования
+### Requirements
 
 - R.
-- RStudio рекомендуется, но не обязателен.
-- Для части скриптов нужен LaTeX/TinyTeX.
-- Для `Session 2-3` нужен доступ к WRDS.
+- RStudio is recommended but not required.
+- LaTeX/TinyTeX is required for some PDF outputs.
+- WRDS access is required for `Session 2-3`.
 
-Основные R-пакеты:
+Main R packages:
 
 - `dplyr`, `tidyr`, `tidyverse`;
 - `knitr`, `kableExtra`, `tinytex`;
@@ -167,15 +167,15 @@ dynare nk_tfp_3shocks_DE.mod
 - `bacondecomp`, `did`, `did2s`;
 - `broom`, `stringr`.
 
-### Запуск
+### Usage
 
-Открыть `Finance-4.Rproj` в RStudio или перейти в папку проекта в R:
+Open `Finance-4.Rproj` in RStudio or set the working directory in R:
 
 ```r
 setwd("Finance-4-main")
 ```
 
-Запустить нужную сессию:
+Run the required session:
 
 ```r
 source("Session 1/Session 1.R")
@@ -184,30 +184,30 @@ source("Session 4-5/Session 4-5.R")
 source("Session 6/Session 6.R")
 ```
 
-### Важное про WRDS
+### WRDS Credentials
 
-В `Session 2-3/Session 2-3.R` используются переменные окружения:
+`Session 2-3/Session 2-3.R` uses environment variables:
 
 ```r
 Sys.setenv(WRDS_USER = "***")
 Sys.setenv(WRDS_PASSWORD = "***")
 ```
 
-Перед реальным запуском нужно заменить значения на свои учетные данные или задать их безопасно вне кода.
+Before running the script with real WRDS access, replace these placeholders with your own credentials or set the credentials securely outside the code.
 
-### Выходные результаты
+### Output
 
-Скрипты создают таблицы, графики, PDF/LaTeX-отчеты и CSV-результаты. Например, в `Session 1/` уже есть сгенерированные `.tex` и `.pdf` файлы с таблицами и результатами моделей, а в `Session 2-3/` есть `final_results_1000.csv`.
+The scripts generate tables, plots, PDF/LaTeX reports, and CSV results. For example, `Session 1/` already contains generated `.tex` and `.pdf` files with tables and model results, while `Session 2-3/` contains `final_results_1000.csv`.
 
-## Рекомендуемый порядок работы
+## Recommended Workflow
 
-1. Если нужна автоматизация сбора новостей регуляторов, начинать с `CBR_Parsers-main`.
-2. Если нужна макроэкономическая модель или IRF-анализ, работать с `DSGE`.
-3. Если нужны учебные материалы и эмпирические упражнения по Finance 4, использовать `Finance-4-main`.
+1. Use `CBR_Parsers-main` for automated collection of central bank and regulator publications.
+2. Use `DSGE` for macroeconomic modeling and IRF analysis.
+3. Use `Finance-4-main` for Finance 4 teaching materials and empirical exercises.
 
-## Примечания
+## Notes
 
-- Папки независимы друг от друга.
-- Python, R и MATLAB-зависимости устанавливаются отдельно.
-- Сгенерированные данные, логи, PDF и графики могут занимать место; при необходимости их можно хранить отдельно от исходного кода.
-- Перед публикацией проекта стоит проверить, что в коде нет реальных логинов, паролей и приватных данных.
+- The three folders are independent.
+- Python, R, and MATLAB dependencies should be installed separately.
+- Generated data, logs, PDFs, and figures may take additional disk space.
+- Before publishing or sharing the project, check that no real logins, passwords, or private data are stored in the code.
