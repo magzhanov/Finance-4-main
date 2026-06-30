@@ -199,15 +199,3 @@ Before running the script with real WRDS access, replace these placeholders with
 
 The scripts generate tables, plots, PDF/LaTeX reports, and CSV results. For example, `Session 1/` already contains generated `.tex` and `.pdf` files with tables and model results, while `Session 2-3/` contains `final_results_1000.csv`.
 
-## Recommended Workflow
-
-1. Use `CBR_Parsers-main` for automated collection of central bank and regulator publications.
-2. Use `DSGE` for macroeconomic modeling and IRF analysis.
-3. Use `Finance-4-main` for Finance 4 teaching materials and empirical exercises.
-
-## Notes
-
-- The three folders are independent.
-- Python, R, and MATLAB dependencies should be installed separately.
-- Generated data, logs, PDFs, and figures may take additional disk space.
-- Before publishing or sharing the project, check that no real logins, passwords, or private data are stored in the code.
